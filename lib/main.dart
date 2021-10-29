@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
               ),
-              child: Text('Load Datas'),
+              child: Text('Load Data'),
               onPressed: readJson,
             ),
 
