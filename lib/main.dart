@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.lightBlueAccent,
         centerTitle: true,
         title: Text(
           'My Contact',
@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             ElevatedButton(
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
+                backgroundColor: MaterialStateProperty.all<Color>(Colors.lightBlueAccent),
               ),
               child: Text('Load Data'),
               onPressed: readJson,
@@ -77,6 +77,7 @@ class _HomePageState extends State<HomePage> {
                         Padding(
                           padding: const EdgeInsets.all(15.0),
                           child: CircleAvatar(
+                            radius: 30,
                               // child: Image.network("${_items[id]["avatar"]}"),
                             backgroundImage: _items[id].containsKey("avatar") ? NetworkImage(_items[id]["avatar"]) : NetworkImage("https://www.vhv.rs/dpng/d/526-5268314_empty-avatar-png-user-icon-png-transparent-png.png"),
                           ),
@@ -102,8 +103,9 @@ class _HomePageState extends State<HomePage> {
                            children: [
                              Text(_items[id]["last_seen_time"]),
                              CircleAvatar(
+                               radius: 10,
                                  child: Text(
-                                     _items[id].containsKey("messages") ? _items[id]["messages"].toString() : " "
+                                     _items[id].containsKey("messages") ? _items[id]["messages"].toString() : "0"
                                  )
                              ),
                            ],
